@@ -99,10 +99,17 @@ GEM
     image_processing (1.13.0)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
+    inertia_rails (3.4.0)
+      railties (>= 6)
+    inertia_rails-contrib (0.3.0)
+      inertia_rails
+      railties (>= 6.0.0)
     io-console (0.7.2)
     irb (1.14.1)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
+    js_from_routes (4.0.1)
+      railties (>= 5.1, < 9)
     logger (1.6.1)
     loofah (2.23.1)
       crass (~> 1.0.2)
@@ -231,6 +238,9 @@ DEPENDENCIES
   bootsnap
   debug
   image_processing (~> 1.2)
+  inertia_rails (~> 3.4)
+  inertia_rails-contrib (~> 0.3.0)
+  js_from_routes
   propshaft
   puma (>= 6.0)
   rails (~> 8.0.0)

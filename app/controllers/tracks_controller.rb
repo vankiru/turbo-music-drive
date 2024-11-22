@@ -3,6 +3,12 @@ class TracksController < ApplicationController
 
   def play
     @track = Track.find(params[:id])
+
+    render json: {
+      props: {
+        track: @track.as_json(methods: :url, include: [:artist, :album])
+      }
+    }
   end
 
   private

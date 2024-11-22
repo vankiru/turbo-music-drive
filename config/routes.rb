@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :albums, only: [:show]
-  resources :artists, only: [:show] do
+  get 'inertia-example', to: 'inertia_example#index'
+  resources :albums, only: [:show], export: true
+  resources :artists, only: [:show], export: true do
     resource :analytics, only: [:show], module: :artists
   end
-  resources :tracks, only: [] do
+  resources :tracks, only: [], export: true do
     member do
       post :play
     end

@@ -29,5 +29,12 @@ class Artist
         base_value * 52
       end
     end
+
+    def as_json(options = {})
+      {
+        period: period,
+        total: total
+      }
+    end
   end
 end
