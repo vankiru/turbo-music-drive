@@ -1,9 +1,7 @@
 class AlbumsController < ApplicationController
   def show
-    @album = Album.find(params[:id])
+    album = serialize(Album.find(params[:id]), include_tracks: true)
 
-    render inertia: 'Album/Show', props: {
-      album: @album.as_json(include: [:artist, :tracks])
-    }
+    render inertia: 'Album/Show', props: {album:}
   end
 end

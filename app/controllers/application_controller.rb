@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::Base
-  around_action :set_turbo_session_id
-
   private
 
-  def set_turbo_session_id(&block)
-    Current.set(turbo_session_id: request.headers["X-Turbo-Session-ID"], &block)
+  def serialize(object, with: nil, **params)
+    return {} unless object
+
+    serializer = with || begin
+      model = object.try(:model) || object.class
+      "#{model.name}Serializer".constantize
+    end
+
+    serializer.new(object, params:)
   end
 end
