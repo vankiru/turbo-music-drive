@@ -4,9 +4,5 @@ class Artist::ShowSerializer < ArtistSerializer
   end
 
   many :albums, proc { |albums| albums.ordered }
-  many :tracks, proc { |tracks, params| tracks.sorted(params[:sort_tracks])}
-
-  attribute :sort_tracks do
-    params[:sort_tracks]
-  end
+  many :tracks, proc { |tracks, params| tracks.includes(:artist, :album).sorted(params[:sort_tracks])}
 end

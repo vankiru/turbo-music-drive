@@ -2,13 +2,9 @@ class TracksController < ApplicationController
   after_action :track_listener
 
   def play
-    @track = Track.find(params[:id])
+    track = serialize(Track.find(params[:id]))
 
-    render json: {
-      props: {
-        track: @track.as_json(methods: :url, include: [:artist, :album])
-      }
-    }
+    render json: {track:}
   end
 
   private

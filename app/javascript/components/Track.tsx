@@ -1,11 +1,11 @@
-import React from 'react';
-import api from '~/api'
-import { useCurrentTrackDispatch } from '~/context/CurrentTrack';
+import React, { useState } from 'react';
+import { useCurrentTrack, useCurrentTrackDispatch } from '~/context/CurrentTrack';
 
 export default function Track({ track, track_counter }) {
+  const currentTrack = useCurrentTrack();
   const dispatch = useCurrentTrackDispatch();
 
-  function secondsToDuration(value) {
+  const secondsToDuration = (value: number) => {
     let mins = Math.floor(value / 60);
     let secs = (value | 0) % 60;
     if (mins < 10) mins = "0" + mins;
@@ -13,17 +13,9 @@ export default function Track({ track, track_counter }) {
     return `${mins}:${secs}`;
   }
 
-  function handleSubmit(e) {
+  const handlePlayTrack = (e: React.FormEvent) => {
     e.preventDefault();
-    playTrack();
-  }
-
-  async function playTrack() {
-    const response = await api.tracks.play(track);
-
-    dispatch({
-      track: response.props.track
-    });
+    dispatch({track: track});
   }
 
   return (
@@ -31,11 +23,15 @@ export default function Track({ track, track_counter }) {
       <span className="text-gray-600 w-6 text-right mr-2">
         {track_counter + 1}
       </span>
-      <form onSubmit={handleSubmit} className="flex-grow truncate text-black hover:text-red-500">
+      <form onSubmit={handlePlayTrack} className="flex-grow truncate text-black hover:text-red-500">
         <button type="submit">{track.title}</button>
       </form>
-      <span className="text-gray-600 self-end w-10 ml-2 text-right">
-        {secondsToDuration(track.duration)}
+      <span className="align-baseline">
+        {currentTrack && currentTrack.id == track.id &&
+          <span className="inline-block rounded-full h-3 w-3 bg-red-500 animate-pulse"></span>}
+        <span className="text-gray-600 self-end w-10 ml-2 text-right">
+          {secondsToDuration(track.duration)}
+        </span>
       </span>
     </li>
   );
