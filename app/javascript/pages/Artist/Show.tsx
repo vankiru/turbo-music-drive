@@ -44,16 +44,16 @@ export default function Show({ artist }) {
         <h2 className="mt-4 text-header-3">Tracks</h2>
         <ul className="w-full border-b border-gray-200 flex text-plain mt-4">
           <li className={"inline-block px-4 text-plain border-b-2 border-white transition-colors" + (artist.sort_tracks == "a-z" && "text-red-500")}>
-            <Link href={api.artists.show.path({...artist, query: {sort_tracks: 'a-z', period: artist.analytics.period}})} className="hover:text-red-700 text-small pb-[2px]" preserveState preserveScroll>A→Z</Link>
+            <Link href={api.artists.show.path({...artist, query: {sort_tracks: 'a-z'}})} className="hover:text-red-700 text-small pb-[2px]" preserveState preserveScroll>A→Z</Link>
           </li>
           <li className={"inline-block px-4 text-plain border-b-2 border-white transition-colors" + (artist.sort_tracks == "z-a" && "text-red-500")}>
-            <Link href={api.artists.show.path({...artist, query: {sort_tracks: 'z-a', period: artist.analytics.period}})} className="hover:text-red-700 text-small pb-[2px]" preserveState preserveScroll>Z→Y</Link>
+            <Link href={api.artists.show.path({...artist, query: {sort_tracks: 'z-a'}})} className="hover:text-red-700 text-small pb-[2px]" preserveState preserveScroll>Z→Y</Link>
           </li>
           <li className={"inline-block px-4 text-plain border-b-2 border-white transition-colors" + (artist.sort_tracks == "old-new" && "text-red-500")}>
-            <Link href={api.artists.show.path({...artist, query: {sort_tracks: 'new-old', period: artist.analytics.period}})} className="hover:text-red-700 text-small pb-[2px]" preserveState preserveScroll>Old→New</Link>
+            <Link href={api.artists.show.path({...artist, query: {sort_tracks: 'new-old'}})} className="hover:text-red-700 text-small pb-[2px]" preserveState preserveScroll>Old→New</Link>
           </li>
           <li className={"inline-block px-4 text-plain border-b-2 border-white transition-colors" + (artist.sort_tracks == "new-old" && "text-red-500")}>
-            <Link href={api.artists.show.path({...artist, query: {sort_tracks: 'old-new', period: artist.analytics.period}})} className="hover:text-red-700 text-small pb-[2px]" preserveState preserveScroll>New→Old</Link>
+            <Link href={api.artists.show.path({...artist, query: {sort_tracks: 'old-new'}})} className="hover:text-red-700 text-small pb-[2px]" preserveState preserveScroll>New→Old</Link>
           </li>
         </ul>
       </div>
