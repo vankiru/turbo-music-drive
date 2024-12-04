@@ -1,7 +1,7 @@
-import React from 'react';
 import { Link } from '@inertiajs/react'
-import { Album as AlbumType } from "~/serializers";
 import api from '~/api'
+
+import { Album as AlbumType } from "~/serializers";
 
 interface AlbumProps {
   album: AlbumType;

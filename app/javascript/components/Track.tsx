@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useCurrentTrack, useCurrentTrackDispatch } from '~/context/CurrentTrack';
 import { Track as TrackType } from "~/serializers";
 
@@ -9,7 +9,7 @@ interface TrackProps {
 
 export default function Track({ track, track_counter }: TrackProps) {
   const currentTrack = useCurrentTrack();
-  const dispatch = useCurrentTrackDispatch();
+  const currentTrackDispatch = useCurrentTrackDispatch();
 
   const secondsToDuration = (value: number) => {
     let mins = Math.floor(value / 60);
@@ -21,7 +21,7 @@ export default function Track({ track, track_counter }: TrackProps) {
 
   const handlePlayTrack = (e: React.FormEvent) => {
     e.preventDefault();
-    dispatch({track: track});
+    currentTrackDispatch({track: track});
   }
 
   return (

@@ -1,4 +1,3 @@
-import React from 'react';
 import Album from '~/components/Album';
 import { Album as AlbumType } from '~/serializers';
 

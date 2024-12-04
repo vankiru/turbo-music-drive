@@ -1,9 +1,9 @@
-import React from 'react';
 import { Link } from '@inertiajs/react';
+import api from '~/api';
+
 import Header from '~/components/Header';
 import Track from '~/components/Track';
 import { Album } from '~/serializers';
-import api from '~/api';
 
 interface AlbumProps {
   album: Album;

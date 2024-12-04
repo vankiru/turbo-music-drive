@@ -1,13 +1,11 @@
-import React from 'react';
 import { Link } from '@inertiajs/react';
+import api from '~/api';
 
 import Header from '~/components/Header';
 import Album from '~/components/Album';
 import Track from '~/components/Track';
 import Analytics from '~/components/Analytics';
 import { ArtistShow } from '~/serializers';
-
-import api from '~/api';
 
 interface ArtistProps {
   artist: ArtistShow;

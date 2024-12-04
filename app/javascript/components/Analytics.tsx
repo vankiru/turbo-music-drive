@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { ArtistShow } from "~/serializers";
+import { useState } from 'react';
 import api from '~/api'
+
+import { ArtistShow } from "~/serializers";
 
 interface AnalyticsProps {
   artist: ArtistShow;
