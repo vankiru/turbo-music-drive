@@ -1,4 +1,6 @@
 class Artist::ShowSerializer < ArtistSerializer
+  typelize_from Artist
+
   typelize "ArtistAnalytics"
   attribute :analytics do |artist|
     artist.analytics(period: params[:period])
