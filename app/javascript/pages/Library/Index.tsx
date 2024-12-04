@@ -1,7 +1,12 @@
 import React from 'react';
 import Album from '~/components/Album';
+import { Album as AlbumType } from '~/serializers';
 
-export default function Index({ albums }) {
+interface AlbumProps {
+  albums: Array<AlbumType>;
+}
+
+export default function Index({ albums }: AlbumProps) {
   return (
     <div>
       <h2 className="mt-4 text-header-2">

@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+import { ArtistShow } from "~/serializers";
 import api from '~/api'
 
-export default function Analytics({ artist }) {
+interface AnalyticsProps {
+  artist: ArtistShow;
+}
+
+export default function Analytics({ artist }: AnalyticsProps) {
   const [analytics, setAnalytics] = useState(artist.analytics);
 
   const handleShowAnalytics = async (period: string) => {

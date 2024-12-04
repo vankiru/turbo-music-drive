@@ -5,10 +5,16 @@ import Header from '~/components/Header';
 import Album from '~/components/Album';
 import Track from '~/components/Track';
 import Analytics from '~/components/Analytics';
+import { ArtistShow } from '~/serializers';
 
-import api from '~/api'
+import api from '~/api';
 
-export default function Show({ artist, sort_tracks }) {
+interface ArtistProps {
+  artist: ArtistShow;
+  sort_tracks: "string";
+}
+
+export default function Show({ artist, sort_tracks }: ArtistProps) {
   return (
     <div>
       <Header/>

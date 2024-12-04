@@ -26,6 +26,8 @@ gem "image_processing", "~> 1.2"
 
 # JSON serialization
 gem "alba"
+gem "typelizer"
+gem "listen", group: :development
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

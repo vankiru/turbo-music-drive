@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { useCurrentTrack, useCurrentTrackDispatch } from '~/context/CurrentTrack';
+import { Track as TrackType } from "~/serializers";
 
-export default function Track({ track, track_counter }) {
+interface TrackProps {
+  track: TrackType;
+  track_counter: number;
+}
+
+export default function Track({ track, track_counter }: TrackProps) {
   const currentTrack = useCurrentTrack();
   const dispatch = useCurrentTrackDispatch();
 

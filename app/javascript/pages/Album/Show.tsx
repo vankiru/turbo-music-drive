@@ -2,9 +2,14 @@ import React from 'react';
 import { Link } from '@inertiajs/react';
 import Header from '~/components/Header';
 import Track from '~/components/Track';
+import { Album } from '~/serializers';
 import api from '~/api';
 
-export default function Show({ album }) {
+interface AlbumProps {
+  album: Album;
+}
+
+export default function Show({ album }: AlbumProps) {
   return (
     <div>
       <Header/>

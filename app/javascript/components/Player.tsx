@@ -3,25 +3,8 @@ import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
 import { useCurrentTrack } from '~/context/CurrentTrack';
+import { Track } from "~/serializers";
 import api from '~/api';
-
-interface Artist {
-  id: bigint;
-  name: string;
-}
-
-interface Album {
-  id: bigint;
-  cover_url: string;
-}
-
-interface Track {
-  id: bigint;
-  title: string;
-  url: string;
-  artist: Artist;
-  album: Album;
-}
 
 interface PlayerProps {
   track: Track;

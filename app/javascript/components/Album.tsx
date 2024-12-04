@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from '@inertiajs/react'
+import { Album as AlbumType } from "~/serializers";
 import api from '~/api'
 
-export default function Album({ album }) {
+interface AlbumProps {
+  album: AlbumType;
+}
+
+export default function Album({ album }: AlbumProps) {
   return (
     <div className="p-2 mx-1 mb-2 bg-opacity-10 rounded-md cursor-pointer w-40 flex-shrink-0">
       <div className="flex flex-col relative">

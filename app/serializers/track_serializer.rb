@@ -3,4 +3,6 @@ class TrackSerializer < ApplicationSerializer
 
   one :artist
   one :album, params: { include_tracks: false }
+
+  typelize url: "string"
 end

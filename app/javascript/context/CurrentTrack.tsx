@@ -24,7 +24,5 @@ export function useCurrentTrackDispatch() {
 }
 
 function currentTrackReducer(track, action) {
-  // track.pause();
-
   return action.track;
 }
