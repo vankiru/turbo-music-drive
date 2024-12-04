@@ -22,6 +22,14 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+
+    /* Aliases */
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./app/javascript/*"
+      ]
+    }
   },
   "include": ["app/javascript"]
 }

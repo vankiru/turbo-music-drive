@@ -36,9 +36,7 @@ group :development do
   gem "web-console"
 end
 
-gem "inertia_rails", "~> 3.4"
-
-gem "inertia_rails-contrib", "~> 0.3.0"
+gem "inertia_rails", "~> 3.5"
 
 group :development do
   gem "js_from_routes"
