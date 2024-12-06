@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_07_140311) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_05_093805) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -41,7 +41,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_07_140311) do
 
   create_table "albums", force: :cascade do |t|
     t.string "title", null: false
-    t.string "cover_url"
+    t.string "cover_url", null: false
     t.integer "year", null: false
     t.integer "artist_id", null: false
     t.integer "tracks_count", default: 0, null: false
@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_07_140311) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name", null: false
-    t.string "cover_url"
+    t.string "cover_url", null: false
     t.integer "albums_count", default: 0, null: false
     t.integer "tracks_count", default: 0, null: false
     t.datetime "created_at", null: false

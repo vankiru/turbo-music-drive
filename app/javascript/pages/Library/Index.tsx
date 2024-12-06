@@ -1,5 +1,5 @@
-import Album from '~/components/Album';
-import { Album as AlbumType } from '~/serializers';
+import Album from "~/components/Album";
+import { Album as AlbumType } from "~/serializers";
 
 interface AlbumProps {
   albums: Array<AlbumType>;
@@ -14,7 +14,9 @@ export default function Index({ albums }: AlbumProps) {
       <hr className="my-4" />
 
       <div className="-mx-3 pt-2 flex flex-wrap relative">
-        {albums.map((album) => (<Album album={album} />))}
+        {albums.map((album) => (
+          <Album album={album} />
+        ))}
       </div>
     </div>
   );

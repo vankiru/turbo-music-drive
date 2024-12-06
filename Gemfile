@@ -26,6 +26,9 @@ gem "alba"
 gem "typelizer"
 gem "listen", group: :development
 
+# Use Inertia.js [https://inertia-rails.dev]
+gem "inertia_rails", "~> 3.5"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
@@ -34,10 +37,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-end
 
-gem "inertia_rails", "~> 3.5"
-
-group :development do
+  # Use JS From Routes to generate JS from Rails routes [https://js-from-routes.netlify.app]
   gem "js_from_routes"
 end

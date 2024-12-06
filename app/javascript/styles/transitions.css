@@ -1,26 +1,40 @@
 @keyframes full-slide-down {
-  from { transform: translateY(0); }
-  to { transform: translateY(100%); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
 }
 
 @keyframes full-slide-up {
-  from { transform: translateY(100%); }
+  from {
+    transform: translateY(100%);
+  }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
+  from {
+    opacity: 0;
+  }
 }
 
 @keyframes fade-out {
-  to { opacity: 0; }
+  to {
+    opacity: 0;
+  }
 }
 
 ::view-transition-old(player) {
-  animation: 500ms ease-in 0ms both full-slide-down, 500ms ease-out 50ms both fade-out;
+  animation:
+    500ms ease-in 0ms both full-slide-down,
+    500ms ease-out 50ms both fade-out;
 }
 
 ::view-transition-new(player) {
-  animation: 300ms ease-out 100ms both full-slide-up, 300ms ease-in 0ms both fade-in;
+  animation:
+    300ms ease-out 100ms both full-slide-up,
+    300ms ease-in 0ms both fade-in;
 }
 
 @keyframes shake {
